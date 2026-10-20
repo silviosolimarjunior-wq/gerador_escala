@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Criar Conta - Gestão de Escalas</title>
+    <style>
+        body { background: #121212; color: #fff; font-family: Arial; margin: 0; padding: 16px; display: flex; justify-content: center; align-items: center; height: 100vh; box-sizing: border-box; }
+        .card { background: #1e1e1e; padding: 20px; border-radius: 8px; border: 1px solid #333; width: 100%; max-width: 320px; text-align: center; }
+        h1 { color: #76bc21; font-size: 20px; margin-bottom: 16px; }
+        label { color: #76bc21; font-weight: bold; font-size: 13px; display: block; margin-top: 10px; text-align: left; }
+        input { width: 100%; padding: 10px; background: #2a2a2a; border: 1px solid #444; border-radius: 4px; color: #fff; box-sizing: border-box; font-size: 16px; margin-top: 4px; }
+        button { width: 100%; background: #76bc21; color: #000; font-weight: bold; padding: 12px; border: none; border-radius: 6px; margin-top: 16px; cursor: pointer; font-size: 16px; }
+        .btn-voltar { background: #333; color: #aaa; border: 1px solid #555; margin-top: 8px; text-decoration: none; display: block; padding: 10px; border-radius: 6px; font-weight: bold; text-align: center; box-sizing: border-box; }
+        .erro { color: #ff5555; font-size: 12px; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Criar Conta</h1>
+        <form method="POST" action="/registro">
+            <label>Novo Usuário:</label>
+            <input type="text" name="usuario" placeholder="Digite seu usuário" required autofocus>
+            <label>Senha:</label>
+            <input type="password" name="senha" placeholder="Digite sua senha" required>
+            <button type="submit">Cadastrar e Entrar</button>
+        </form>
+        <a href="/login" class="btn-voltar">Voltar ao Login</a>
+        {% if erro %}<div class="erro">{{ erro }}</div>{% endif %}
+    </div>
+</body>
+</html>
+
