@@ -774,3 +774,12 @@ def deletar_ticket(id):
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
+# Lista de postos
+postos_manha = {"caixa": funcionario_A, "valet": funcionario_B, "patio": funcionario_C}
+
+# Para a tarde:
+# funcionario_A NÃO pode ir para [caixa, valet]
+# funcionario_B NÃO pode ir para [caixa, valet]
+
+# Logo, para o caixa e valet da tarde, o sistema escolhe apenas entre
+# os funcionários que ficaram no pátio (ou outros postos) de manhã!
